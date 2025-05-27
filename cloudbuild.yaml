@@ -10,7 +10,7 @@ steps:
     args: [
       'run', 'deploy', 'etl-microservice',
       '--image', 'gcr.io/$PROJECT_ID/etl-microservice',
-      '--region', 'asia-south1',
+      '--region', 'us-central1',
       '--platform', 'managed',
       '--allow-unauthenticated'
     ]
