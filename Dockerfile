@@ -20,3 +20,5 @@ ENV PORT 8080
 # Start the Flask app
 CMD ["python", "main.py"]
 
+# Start the Flask app with gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "main:app"]

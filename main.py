@@ -4,13 +4,12 @@ from flask import Flask, request, jsonify
 import jsonschema
 import json
 from jsonschema import validate, ValidationError
-
-
+import os
 
 from transform import transform_record
 from load import load_to_bigquery
 
-
+port = int(os.environ.get("PORT", 8080))
 app = Flask(__name__)
 
 # Load schema from file
