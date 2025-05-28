@@ -25,7 +25,11 @@ def ingest():
             "type": "object",
             "properties": {
                 "transaction_id": {"type": "string"},
-                "amount": {"type": "number"}
+                "amount": {"type": "number"},
+                "tax": {"type": "number"},
+                "customer_id": {"type": "string"},
+                "product_id": {"type": "string"},
+                "timestamp": {"type": "timestamp"}
             },
             "required": ["transaction_id", "amount"]
         }
