@@ -13,8 +13,8 @@ port = int(os.environ.get("PORT", 8080))
 app = Flask(__name__)
 
 # Load schema from file
-with open("schema.json") as f:
-    schema = json.load(f)
+#with open("schema.json") as f:
+   # schema = json.load(f)
 
 
 @app.route("/ingest", methods=["POST"])
@@ -30,7 +30,7 @@ def ingest():
                 "product_id": {"type": "string"}
 
             },
-            "required": ["transaction_id", "amount"]
+            "required": ["transaction_id", "amount","customer_id", "product_id" ]
         }
         validate(instance=data, schema=schema)
 
