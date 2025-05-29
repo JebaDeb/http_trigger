@@ -47,14 +47,11 @@ def ingest():
             "amount": data["amount"],
             "tax": tax,
             "total": total,
-            "timestamp":  {
-                "type": "string",
-                "format": "date-time"
-                },
+            "timestamp":  timestamp,
             "customer_id": data["customer_id"],
             "product_id": data["product_id"]
         }
-        #transformed = transform_record(data)
+        transformed = transform_record(data)
 
 
 
