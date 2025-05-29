@@ -26,10 +26,9 @@ def ingest():
             "properties": {
                 "transaction_id": {"type": "string"},
                 "amount": {"type": "number"},
-                "tax": {"type": "number"},
                 "customer_id": {"type": "string"},
-                "product_id": {"type": "string"},
-                "timestamp": {"type": "timestamp"}
+                "product_id": {"type": "string"}
+
             },
             "required": ["transaction_id", "amount"]
         }
@@ -48,7 +47,12 @@ def ingest():
             "amount": data["amount"],
             "tax": tax,
             "total": total,
-            "timestamp": timestamp
+            "timestamp":  {
+                "type": "string",
+                "format": "date-time"
+                },
+            "customer_id": data["customer_id"],
+            "product_id": data["product_id"]
         }
         #transformed = transform_record(data)
 
