@@ -55,7 +55,7 @@ def ingest():
 
 
         # Step 3: Load to BigQuery
-        table_id = "psychic-raceway-461010-a1.http_trigger.trans_table"
+        table_id = "psychic-raceway-461010-a1.http_etl_trigger.transaction_table"
         load_to_bigquery(transformed, table_id)
 
         # (Later) Load to BigQuery here
